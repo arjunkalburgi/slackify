@@ -8,7 +8,7 @@ export default class Button extends React.Component {
         return (
         <View style={styles.buttonContainer}>
             <LinearGradient colors={['white', 'white', 'white', YELLOW, YELLOW, 'white', 'white']}>
-                <Text style={styles.buttonText}>{this.props.text}</Text>
+                <Text style={styles.buttonText} style={{fontSize: this.props.size}}>{this.props.text}</Text>
             </LinearGradient>
         </View>)
   }; 
@@ -16,7 +16,6 @@ export default class Button extends React.Component {
 
 const styles = StyleSheet.create({
     buttonText: {
-        fontSize: 24,
         fontFamily: 'PT-Sans-Caption',
         backgroundColor: 'transparent', 
     },

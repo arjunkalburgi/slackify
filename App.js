@@ -24,7 +24,7 @@ export default class App extends React.Component {
     if (this.state.fontsLoaded) {
       if (this.state.signedIn) {
         return (
-          <View style={styles.container}>
+          <View style={styles.signinContainer}>
               <Emoji />
           </View>
         );
@@ -41,7 +41,7 @@ export default class App extends React.Component {
               <FormInput label="Password" placeholder="" />
             </View>
             <TouchableOpacity style={styles.signinButtonSection} onPress={this._onSignIn}>
-              <Button text="Sign in with Slack" />
+              <Button text="Sign in with Slack" size={24} />
             </TouchableOpacity>
           </View>
         );
