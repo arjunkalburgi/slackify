@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, 
-  TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { YELLOW } from './../App'
+import Button from './button';
+import FormInput from './formInput';
 
 export default class Emoji extends React.Component {
   state = {
@@ -8,10 +10,26 @@ export default class Emoji extends React.Component {
   }
 
   render() {
-    console.log("in emoji"); 
     return (
-      <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
+      <View style={styles.emojiContainer}>
+        <View style={styles.emojiNavBar}></View>
+        <View style={styles.emojiTeam}>
+          <View style={styles.emojiTeamLabels}>
+            <Text style={styles.emojiTeamLabel}>Slack Team: </Text>
+            <Text style={styles.emojiTeamName}>arjunslife</Text>
+          </View>
+          <Button style={styles.emojiTeamButton} text="change" size={14} />
+        </View>
+        <View style={styles.emojiForm}>
+          <View style={styles.emojiFormPicture}>
+            <Text style={styles.emojiPictureLabel}>Select a picture: </Text>
+            <Image style={styles.emojiFormPictureImage} source={{uri: this.state.imageUri}} />
+          </View>
+          <FormInput style={styles.emojiFormName} label="Emoji name" />
+        </View>
+        <TouchableOpacity style={styles.emojiButtonSection} onPress={this._onPick}>
+          <Button text="Upload Emoji" size={24} />
+        </TouchableOpacity>
       </View>
     );
   }
@@ -33,7 +51,7 @@ export default class Emoji extends React.Component {
     await fetch(`https://arjunslife.slack.com/api/emoji.add`, {
       method: 'POST',
       body: formData
-    }).then(function(response) {
+    }).then(function (response) {
       console.log(response)
       if (response.status != 200) {
         console.log("upload did not work");
@@ -45,15 +63,60 @@ export default class Emoji extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    button: {
-        padding: 5,
-        margin: 5,
-        backgroundColor: '#ddd',
-    },
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+  emojiButtonSection: {
+    padding: 5,
+    marginTop: 35,
+  },
+  emojiFormPictureImage: {
+    width: 128, 
+    height: 128, 
+    marginLeft: 'auto',
+    marginRight: 'auto', 
+  },
+  emojiFormPictureLabel: {
+    width: '33%',
+    fontFamily: 'PT-Sans-Caption',
+  },
+  emojiFormPicture: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 40,
+  },
+  emojiForm: {
+    marginTop: 100,
+    width: '80%',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+  emojiTeamButton: {
+    alignSelf: 'flex-end',
+  },
+  emojiTeamName: {
+    fontFamily: 'PT-Sans-Caption',
+  },
+  emojiTeamLabel: {
+    fontFamily: 'PT-Sans-Caption-Bold',
+  },
+  emojiTeamLabels: {
+    flexDirection: 'row',
+  },
+  emojiTeam: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
+    marginTop: 30,
+    marginBottom: 30,
+    width: '50%',
+    marginLeft: 'auto', 
+    marginRight: 'auto',
+  },
+  emojiNavBar: {
+    height: 85,
+    backgroundColor: "yellow",
+    // backgroundColor: YELLOW,
+    elevation: 3,
+    width: '100%',
+  },
+  emojiContainer: {
+      flex: 1,
+  }
 });
