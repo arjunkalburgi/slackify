@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+
 import Emoji from './components/emoji'; 
-import FormInput from './components/formInput'; 
+import FormInput from './components/formInput';
+import Button from './components/button'; 
 
 export default class App extends React.Component {
   state = {
@@ -27,8 +29,8 @@ export default class App extends React.Component {
             <FormInput label="Username" placeholder="" />
             <FormInput label="Password" placeholder="" />
           </View>
-          <TouchableOpacity style={styles.button} onPress={this._onSignIn}>
-            <Text>Sign in with Slack</Text>
+          <TouchableOpacity style={styles.signinButtonSection} onPress={this._onSignIn}>
+            <Button text="Sign in with Slack" />
           </TouchableOpacity>
         </View>
       );
@@ -41,14 +43,12 @@ export default class App extends React.Component {
   }
 }
 
-const YELLOW = '#FDF300';
-const DROPSHADOWCOLOUR = '#FDF1034D';
+export const YELLOW = '#FDF300';
 
 const styles = StyleSheet.create({
-  button: {
+  signinButtonSection: {
     padding: 5,
-    margin: 5,
-    backgroundColor: '#ddd',
+    marginTop: 35,
   },
   signinFormSection: {
     width: '80%', 

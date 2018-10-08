@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     signinFormInput: {
-        backgroundColor: '#ddd',
         flexDirection: 'row',
         marginBottom: 5,
     },
