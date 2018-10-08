@@ -11,12 +11,8 @@ export default class FormInput extends React.Component {
   render() {
         return (<View style={styles.signinFormInput}>
             <View style={styles.signinFormInput}>
-                <View style={styles.signinFormInputLabel}>
-                <Text>{this.props.label}:</Text>
-                </View>
-                <View style={styles.signinFormInputText}>
-                <Text>{this.props.placeholder}</Text>
-                </View>
+                <Text style={styles.signinFormInputLabel}>{this.props.label}:</Text>
+                <Text style={styles.signinFormInputText}>{this.props.placeholder}</Text>
             </View>
         </View>)
   }; 
@@ -30,11 +26,13 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         flexDirection: 'row',
+        fontFamily: 'PT-Sans-Caption',
         alignItems: 'center',
     },
     signinFormInputLabel: {
         width: '33%',
         flexDirection: 'row',
+        fontFamily: 'PT-Sans-Caption',
         alignItems: 'center',
     },
     signinFormInput: {

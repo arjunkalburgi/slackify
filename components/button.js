@@ -17,7 +17,7 @@ export default class Button extends React.Component {
 const styles = StyleSheet.create({
     buttonText: {
         fontSize: 24,
-        fontFamily: 'Roboto',
+        fontFamily: 'PT-Sans-Caption',
         backgroundColor: 'transparent', 
     },
     buttonContainer: {
