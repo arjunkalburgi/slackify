@@ -1,6 +1,8 @@
 # slackify
 Slackify is an Expo app that allows users to choose/take photos which then get resized to emoji dimensions perfect for uploading to Slack. With this app, a team can quickly grow their custom emoji index with all manner of photos.
 
+![alt text](https://cdn-images-1.medium.com/max/1600/1*QnJhLtTd_b5B80E2gaZdSg.jpeg "Slackify")
+
 See [Slackify-Pennapps](https://github.com/askalburgi/slackify-pennapps), for which I placed in the top 30 at PennApps 2017! This project is a refreshed version with a new style and new API structure. 
 
 ## story
